@@ -1,0 +1,6 @@
+c:\users\s105user13\documents\visual studio 2015\Projects\2lab\2lab\bin\Debug\2lab.exe.config
+c:\users\s105user13\documents\visual studio 2015\Projects\2lab\2lab\bin\Debug\2lab.exe
+c:\users\s105user13\documents\visual studio 2015\Projects\2lab\2lab\bin\Debug\2lab.pdb
+c:\users\s105user13\documents\visual studio 2015\Projects\2lab\2lab\obj\Debug\2lab.csprojResolveAssemblyReference.cache
+c:\users\s105user13\documents\visual studio 2015\Projects\2lab\2lab\obj\Debug\2lab.exe
+c:\users\s105user13\documents\visual studio 2015\Projects\2lab\2lab\obj\Debug\2lab.pdb
