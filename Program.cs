@@ -12,7 +12,7 @@ namespace _2lab
     class Program
     {
 
-        public static void Create(List<Unit> Army1, int armysize, StreamWriter sw)
+        public static void Create(List<Unit> Army1, int armysize, StreamWriter sw) //Метод для создания армий разной размерности и наполняем
         {
             Random a = new Random();
             for (int i = 0; i < armysize; i++)
@@ -100,7 +100,7 @@ namespace _2lab
 
             while ((Army1.Count() != 0) && (Army2.Count() != 0))
             {
-                for (int ini = 1; (ini < 7) && (Army1.Count() != 0) && (Army2.Count() != 0); ini++)
+                for (int ini = 1; (ini < 7) && (Army1.Count() != 0) && (Army2.Count() != 0); ini++) // отбор воинов с инициативой от 1 до 6
                 {
 
                     for (int i = 0; i < Army1.Count(); i++)
@@ -112,7 +112,7 @@ namespace _2lab
                     {
                         if (Army2[i].initiative == ini) kucha2.Add(Army2[i]);
                     }
-                    if ((kucha1.Count() != 0) || (kucha2.Count() != 0))
+                    if ((kucha1.Count() != 0) || (kucha2.Count() != 0)) //случайно выбираемый воин бьет случайного противника 
                     {
                         switch (a.Next(1))
                         {
@@ -122,13 +122,11 @@ namespace _2lab
                                     Console.WriteLine(kucha1[n].ToString() + " выбран для битвы");
                                     sw.WriteLine(kucha1[n].ToString() + " выбран для битвы");
                                     Unit b = Army2[a.Next(Army2.Count())];
-                                    // Console.WriteLine("СМОТРИ КОГО ВЫБРАЛИ УБИВАТЬ" + b.ToString());
-                                    if ((kucha1[n] is Healer) || (kucha1[n] is HealingTower))
+                                    if ((kucha1[n] is Healer) || (kucha1[n] is HealingTower)) //если это лекарь или леачащая башная то выбирает случайного война из своей армии для ле
                                     {
                                         if (kucha1[n] is Healer)
                                         {
                                             int d = a.Next(Army1.Count);
-                                            // Console.WriteLine("СМОТРИ КОГО ВЫБРАЛИ ЛЕЧИТЬ" + Army1[d].ToString());
                                             if (!(Army1[d] is Tower))
                                             {
                                                 if (Army1[d].health < Army1[d].maxhealth)
@@ -146,7 +144,6 @@ namespace _2lab
                                             for (int i = 1; i < 3; i++)
                                             {
                                                 int d = a.Next(Army1.Count);
-                                                //  Console.WriteLine("СМОТРИ КОГО ВЫБРАЛИ ЛЕЧИТЬ" + Army1[d].ToString());
                                                 if (!(Army1[d] is Tower))
                                                 {
                                                     if (Army1[d].health < Army1[d].maxhealth)
@@ -234,7 +231,7 @@ namespace _2lab
                                 }
                         }
                     }
-                    /*else
+                   else
                     {
                         if (kucha1.Count() != 0)
                         {
@@ -242,13 +239,11 @@ namespace _2lab
                         Console.WriteLine(kucha1[n].ToString() + " выбран для битвы");
                         sw.WriteLine(kucha1[n].ToString() + " выбран для битвы");
                         Unit b = Army2[a.Next(Army2.Count())];
-                       // Console.WriteLine("СМОТРИ КОГО ВЫБРАЛИ УБИВАТЬ" + b.ToString());
                         if ((kucha1[n] is Healer) || (kucha1[n] is HealingTower))
                             {
                             if (kucha1[n] is Healer)
                             {
                                 int d = a.Next(Army1.Count);
-                              //  Console.WriteLine("СМОТРИ КОГО ВЫБРАЛИ ЛЕЧИТЬ" + Army1[d].ToString());
                                 if (!(Army1[d] is Tower))
                                 {
                                     if (Army1[d].health < Army1[d].maxhealth)
@@ -266,7 +261,6 @@ namespace _2lab
                                 for (int i = 1; i <= a.Next(1, 3); i++)
                                 {
                                     int d = a.Next(Army1.Count);
-                                  //  Console.WriteLine("СМОТРИ КОГО ВЫБРАЛИ ЛЕЧИТЬ" + Army1[d].ToString());
                                     if (!(Army1[d] is Tower))
                                     {
                                         if (Army1[d].health < Army1[d].maxhealth)
@@ -296,13 +290,11 @@ namespace _2lab
                             Console.WriteLine(kucha2[n].ToString() + " выбран для битвы");
                             sw.WriteLine(kucha2[n].ToString() + " выбран для битвы");
                             Unit b = Army1[a.Next(Army1.Count())];
-                       // Console.WriteLine("СМОТРИ КОГО ВЫБРАЛИ убивать" +b.ToString());
                         if ((kucha2[n] is Healer) || (kucha2[n] is HealingTower))
                                 {
                             if (kucha2[n] is Healer)
                             {
                                 int d = a.Next(Army2.Count);
-                              //  Console.WriteLine("СМОТРИ КОГО ВЫБРАЛИ ЛЕЧИТЬ" + Army2[d].ToString());
                                 if (!(Army2[d] is Tower))
                                 {
                                     if (Army2[d].health < Army2[d].maxhealth)
@@ -320,7 +312,6 @@ namespace _2lab
                                 for (int i = 1; i <= a.Next(1, 3); i++)
                                 {
                                     int d = a.Next(Army2.Count);
-                                   // Console.WriteLine("СМОТРИ КОГО ВЫБРАЛИ ЛЕЧИТЬ" + Army2[d].ToString());
                                     if (!(Army2[d] is Tower))
                                     {
                                         if (Army2[d].health < Army2[d].maxhealth)
@@ -344,7 +335,7 @@ namespace _2lab
                             kucha2.RemoveAt(n);
                         }
                         }
-                    }*/
+                    }
                     kucha1.Clear();
                     kucha2.Clear();
 
